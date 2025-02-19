@@ -19,5 +19,6 @@ jobs:
           python-version: "3.9"
 
       - name: Run the app
+        shell: bash
         run: |
           make setup && make run
