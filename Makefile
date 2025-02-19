@@ -1,5 +1,5 @@
 # Variables
-APP_NAME = flask_app
+APP_NAME = flaskr
 VENV = venv
 PYTHON = $(VENV)/bin/python
 PIP = $(VENV)/bin/pip
@@ -7,20 +7,20 @@ PIP = $(VENV)/bin/pip
 # Create a virtual environment and install dependencies
 setup:
 	python3 -m venv $(VENV)
-	$(PIP) install --upgrade pip
-	$(PIP) install -r requirements.txt
+	source $(VENV)/bin/activate && $(PIP) install --upgrade pip
+	source $(VENV)/bin/activate && $(PIP) install -r requirements.txt
 
 # Run the Flask app
 run:
-	FLASK_APP=__init__.py FLASK_ENV=development $(PYTHON) -m flask run --host=0.0.0.0 --port=5000
+	source $(VENV)/bin/activate && FLASK_APP=$(APP_NAME) FLASK_ENV=development flask run --host=0.0.0.0 --port=5000
 
 # Format the code
 format:
-	$(PYTHON) -m black .
+	source $(VENV)/bin/activate && $(PYTHON) -m black .
 
 # Run tests
 test:
-	$(PYTHON) -m pytest
+	source $(VENV)/bin/activate && $(PYTHON) -m pytest
 
 # Deploy using GitHub Actions
 deploy:
@@ -29,5 +29,3 @@ deploy:
 # Clean up the environment
 clean:
 	rm -rf $(VENV) __pycache__ *.pyc *.pyo *.pyd flaskr.sqlite
-
-##
