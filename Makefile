@@ -12,7 +12,7 @@ setup:
 
 # Run the Flask app
 run:
-	FLASK_APP=flaskr FLASK_ENV=development $(PYTHON) -m flask run --host=0.0.0.0 --port=5000
+	FLASK_APP=__init__.py FLASK_ENV=development $(PYTHON) -m flask run --host=0.0.0.0 --port=5000
 
 # Format the code
 format:
