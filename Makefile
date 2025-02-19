@@ -1,5 +1,5 @@
 # Variables
-APP_NAME = flaskr
+APP_NAME = app.py
 VENV = venv
 PYTHON = $(VENV)/bin/python
 PIP = $(VENV)/bin/pip
