@@ -29,3 +29,5 @@ deploy:
 # Clean up the environment
 clean:
 	rm -rf $(VENV) __pycache__ *.pyc *.pyo *.pyd flaskr.sqlite
+
+##
