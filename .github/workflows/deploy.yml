@@ -21,4 +21,4 @@ jobs:
       - name: Run the app
         shell: bash
         run: |
-          make setup && make run
+            make setup && make run
